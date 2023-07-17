@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> //콜백함수:매개변수로 함수를 전달하고 전달된 매개변수가 특정시점에 호출되는 것
+        function add(x,y){
+            return x+y;
+        }
+
+        function sub(x,y){
+            return x-y;
+        }
+        
+        function printResult(x,y,callback){ //파라미터로 넘어온 함수:콜백함수
+            var result = callback(x,y);
+            document.write(result+"<br>");
+        }
+
+        printResult(2,3,add);//함수명으로 콜백함수 자리에 추가
+        printResult(2,3,sub);
+
+        document.write(add(3,5)); //함수명을 넣어서 사용 가능
+
+
+
+
+
+    </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

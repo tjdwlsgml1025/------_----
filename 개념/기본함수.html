@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+		//1부터 100까지 합
+		var sum= 0;
+		for(var i=1; i<=100; i++){		
+			sum+=i;		
+		}
+		document.write(sum);	
+		document.write("<br>")
+
+		//구구단
+		/*for(var i =1; i<=9; i++){
+			for(var j=1; j<=9; j++){	
+				document.write(i + "x" + j + "=" + (i * j));
+				document.write("<br>");	
+			}
+			document.write("<br>")
+			
+		}*/
+
+		//홀수단만 뽑기
+		
+	/*	for(var i =1; i<=9; i++){
+			if(i%2==0)
+				continue;
+
+			for(var j=1; j<=9; j++){	
+				document.write(i + "x" + j + "=" + (i * j));		
+				document.write("<br>");					
+			}
+			document.write("<br>")
+			
+		}
+*/
+		//기본별찍기
+		for(var i=1; i<=5; i++){
+			for(var j=1; j<=i;j++){
+				document.write("*")
+			}
+			document.write("<br>")
+		}
+
+		document.write("<hr>")
+
+		
+		for(var i=1; i<5; i++){
+			for(var j=i; j<=5;j++){
+				document.write("*")
+			}
+	
+			document.write("<br>")
+		}
+
+		document.write("<hr>")
+		
+		for(var i=1; i<5; i++){
+			for(var k=5; k>i; k--){
+				document.write("&nbsp")
+			}
+			
+			for(var j=1; j<=i;j++){
+				document.write("*")
+			}
+	
+			document.write("<br>")
+		}
+
+
+		
+    
+    </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+		//크기를 지정하지 않은 배열객체 생성
+        var varArr1= new Array();
+
+        //크기를 지정한 배열 객체 생성
+        var varArr2 = new Array(5); 
+
+        //배열생성과 데이터 저장을 동시에-데이터타입 상관없이 다 넣을 수 있음
+        var varArr3 = new Array(123, "ABC", true, function fun(){}, {}, undefined);
+        var varArr4 =[123, "ABC", true, function fun(){},{},undefined]; //자바에서는 {}임=대괄호가 객체니까
+       
+        console.log("varArr1 : " + varArr1);       
+        console.log("varArr2 : " + varArr2);
+        console.log("varArr3 : " + varArr3);
+        console.log("varArr4 : " + varArr4);
+
+        //배열 길이(크기)
+        var varArr = new array(0,1,2,3,4,5);
+        console.log("varArr.length:" + varArr.length); //=6개나옴
+
+        var varArrTemp = new Araay(100);
+        console.log("varArrTemp.length:" + varArrTemp.length) 
+        
+
+        varArr = ['사과', '오렌지', '포도']
+
+
+        for (let i = 0; i < array.length; index++) {
+            document.write(varArr[i]);          
+        }
+
+        //for-in 일반 for문
+        for(let num in varArr){
+            document.write(num);
+        }
+
+        //shift(),pop()
+        var varArrShiftPop = new Array("가","나","다","라","마");
+        console.log("varArrshiftPop.shift():" + varArrShiftPop.shift());
+        console.log("varShiftPop:"+ varArrShiftPop);
+
+        console.log("VarArrShiftPop.pop():" + varArrShiftPop.pop());
+        console.log("varArrShiftPop:" + varArrShiftPop);
+
+ 
+        
+      
+		
+    
+    </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/hello.js"> 
+    //js폴더밑에있는헬로파일을 부름
+    </script>
+
+    <script>
+        window.alert('Hello world'); //알림 창,window는 생략가능(밑에함수들도)
+        console.log("메롱"); //f12콘솔창이름
+        document.write("<h1>메롱</h1>") //dom객체,바디에 쓰는 것과 같은 효과
+        document.write("<h2>나는 프로그래머</h2>") 
+       
+       //입력,출력
+        var input = prompt("출력창입니다.","문장을 입력하세요"); //사용자에게 생성한 객체에 입력받기
+        document.write(input);//받은 내용을 바디로
+        console.log(input);
+
+        //데이터타입
+        // : 자바의 wrapper class 처럼 데이터타입을 객체로 생성해둠
+        var str = "가나다라마바사" //문자열
+        console.log("str:"+str);
+
+        var num=123; //숫자열
+        console.log("num:"+num);
+
+        var boo=true;
+        console.log("boo:"+boo);
+
+        //데이터타입
+        var num=0; //var를 이용하면 값을 보고 알아서 데이터타입 정해줌
+        var num=true
+        document.write(num);
+
+        //문자형
+        var varStr="ABCDEF";
+        console.log("varStr : " + varStr);
+        //숫자형
+        var varNum= 123456;
+        console.log("varNum : " + varNum);
+        //블린형
+        var varBoo = false;
+        console.log(" varBoo : " +  varBoo);
+        //함수형
+        var varFun=function fun(){}; //함수도 객체처럼 다이렉트로 집어넣을 수 있다
+        console.log("varFun : " + varFun);
+        //객체형
+        var varObj={};
+        console.log("varObj : " + varObj);
+        //선언만하고 초기화(할당)하지 않은 변수,null과 다름
+        var varUnd=undefined;
+        console.log("varUnd : " + varUnd);
+
+        //데이터타입을 확인하는 연산자
+        varTemp =123;
+        console.log("varTemptype:"+typeof(varTemp)); 
+
+        //---자료형변환
+        varType = Number(varType); //자바에서 int a = Integer.valueOf("1234")와 같음
+        console.log("vartype"+typeof(varType));
+        console.log("vartype" +(varType+1000));
+
+
+    </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    //함수생성
+        function add(num1, num2){ //파라미터그냥생성
+            return num1+num2;
+        }
+
+        document.write(add(1,2)+"<br>"); //함수출력
+
+    //익명함수 : function옆에 함수 이름이 없다
+        var sub = function(num1, num2){
+            return num1-num2;
+        }
+        document.write(sub(1,2)+"<br>");//파라미터를 함수식으로 호출해서
+        
+
+    //함수(핵심)=this와 argument
+     //argument=자바스크립트에서 함수가 만들어 질 때 생성자 처럼 두개를 넣어줌
+     //그게바로 arguments 와 this임
+
+    function funArgs(){ 
+        return arguments; //파라미터에 대한 배열 객체
+    }
+
+    var fun = funArgs(1,2,3,4,5,6,7); //자바와 달리 파라미터 갯수를 맘대로 때려넣어도 됨
+
+    for (let i = 0; i < arrguments.length; i++) {
+        document.write("내부"+ arguments[i] + "<br>"); 
+    }
+
+
+    /*for (var num in fun) {
+       document.write(fun[num]+"<br>");   //부터7까지 출력됨        
+        }*/
+
+
+    fun1();
+    fun2();
+
+    //명시적함수생성(선언) =정상호출
+    function fun1(){
+        console.log("fun1 run!")
+    }
+
+    var fun2 = function(){
+        console.log("fun2 run!") //실행안됨, 선언안된채로 시작해서
+    }   
+    fun2(); //실행됨
+
+    document.write(fun+"<br>") //[object Arguments] = 데이터타입 출력
+    document.write("fun"+ fun.length+"<br>") //fun7 = 파라미터갯수
+
+
+
+
+    </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

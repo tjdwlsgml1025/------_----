@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> 
+        //속성 추가(.) 및 삭제 ('delete')
+        var objName = {
+            name : "Lee sun shin",
+            nation : "korea",
+            gender : "men",
+            character : "good"
+        };
+
+        //for in으로 객체 속성들 접근해서 다 문자열로 출력
+        var print = " " ;
+        for (var key in objName) { 
+           print += key + ":" + objName[key] + "\n"
+        }
+        console.log(print); 
+
+        //속성추가(.)
+        objName.talent = "fencing"; //  (.으로 접근해서 추가)
+        print = "";
+
+        for(var key in objName) {
+            print += key + " : " + objName[key] + "\n" //추가된거 확인
+         }
+         console.log(print); 
+
+        //속성삭제(delete)
+        delete(objName.talent);
+
+        
+        for(var key in objName) {
+            print += key + " : " + objName[key] + "\n" //삭제된거 확인
+         }
+         console.log(print); 
+
+        //in키워드: key존재유무확인  
+         console.log("nation" in objName); //true 이런 속성이 있는지 확인
+         console.log("age" in objName); //false
+
+        //with 키워드: 객체접근을 간소화  
+        with(objName){
+            console.log("name:" + name); //이제 접근할 때 objName.name이라고 안해도됨
+            console.log("nation:" + nation);
+            console.log("gender:" + gender);
+            console.log("character:" + character);
+        }
+
+
+
+   
+   </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> //객체:속성과 기능을 가지고 있는 프로그램 덩어리
+
+        var ojbName ={}; //들어가는 값에 따라 데이터타입이 달라짐
+        document.write(typeof ojbName+"<br>"); //타입오브:데이터타입을 알려주는 함수
+
+        var objCar = {
+            width: "3m", //속성들 key + value 형태
+            heigth : "2m",
+            cc:"2000cc",
+            energy : 100,
+            speed : function(power){ //함수를 속성으로 넣을 때는익명함수형태로
+                return this.energy*power; //자기자신 멤버 접근 시에는 this 필수
+            }
+        };
+        document.write(objCar["width"]+"<br>"); //배열 형태로 접근 가능
+
+
+        document.write(objCar.width+"<br>");
+        document.write(objCar.heigth+"<br>");
+        document.write(objCar.cc+"<br>")
+
+        document.write(objCar.energy+"<br>");
+        document.write(objCar.speed(10000)+"<br>"); //익명함수는 파라미터값 받아야니까
+
+        objCar.width= "8m"; //다이렉트로 값을 넣을 수도 있음
+        document.write(objCar.width+"<br>");
+
+        //for in을 이용한 객체에 접근
+        var print = " "; //해당 속성을 문자열로 받겠다
+        for (var key in objCar) {
+          //  if (typeof objCar[key] == "function") continue;
+         print += key + " : " + objCar[key] + "\n"; //키값들을 문자열로 받아 출력
+        }
+
+ 
+
+
+
+   
+   </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

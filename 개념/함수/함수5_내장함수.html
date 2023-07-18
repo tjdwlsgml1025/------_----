@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> //내장함수:js가기본적으로제공하는 함수
+        window.alert("내장함수"); //알림창뜨기 (window는 생략한다)
+        console.log("내장함수") //콘솔창에 작성
+
+        //시간관련 함수
+
+        //Timeout 함수
+        //1번방법
+        var timeOut = setTimeout(function(){
+            alert("3초 후 한번 실행")
+        },3000); //파라미터가 두개 (<콜백함수>+숫자)
+
+        //2번방법
+        var timeFun=function(){
+            alert("3초후 한번 실행")
+        }
+        var timeOut = setTimeout(timeFun,3000); //3초후에 해당 콜백 함수를 실행
+   
+
+        //setInterval함수
+        var intervalId = setInterval(function(){
+            document.write("2초마다 실행"+"<br>"); //2초마다 콜백함수 실행
+        },2000) 
+
+        setTimeout(function (){ //Interval함수 10초뒤에 중지
+            clearInterval(intervalId);
+        },10000);
+
+
+        //eval함수 :문자열에있는 소스 코드를 실행
+        var varEval = "console.log('eval함수!')";
+        eval(varEval);
+
+   
+   
+   </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

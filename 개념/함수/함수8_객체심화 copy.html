@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> 
+    //객체를 생성
+    //1.Object()생성자 사용
+    
+    var person = new Object(); //데이터타입을 객체로 만들어준것> person = {}; //객체생성
+
+    person.name = "홍길동"; //속성추가문법(.)활용
+    person.age = "35";
+
+    document.write(person + "<br>")
+
+    //2.객체리터럴 사용
+    var objPerson = {
+        name : "홍길동",
+        age : "35"
+    
+    }
+
+    //3. 생성자 함수를 사용(붕어빵틀,사람이 2만명이면 다 적을수없으니)
+    function Airplane(name, color, speed){ //앞글자는 대문자로, 반드시 this로 속성만들기
+
+        this.name = name;
+        this.color = color; //객체의문법(2번)':'과 헷갈리면 안됨, 함수문법은'='
+        this.speed =speed; 
+
+        this.fly = function(){
+            return this.speed+"fly!"
+        };
+    } 
+    
+    var plane1 = new Airplane("보라매","레드",100);
+
+    document.write(plane1.fly()); //함수니까 괄호잊지말기
+
+
+    //함수에서도 기본적으로 this를 쓸 수 있음=js에서는 함수가 객체이기 때문
+    //함수가 만들어 질 때 객체로 위해서 2가지 심어줌 (1.this / 2.arguments)
+    //this; > var Airplane(this) = {} 디스를 하면 객체가 생성되었다는 말/ 자기자신 객체를머라구?모르겠땅ㅋ
+  
+    
+
+   
+
+   
+   </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

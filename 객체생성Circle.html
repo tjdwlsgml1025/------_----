@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Circle(radius){
+            this.radius=radius;
+
+            this.getArea=function(){
+                var area = this.radius * this.radius*Math.PI;
+                return "반지름"+ radius + "인 원의 넓이는 =" + area + "입니다";
+            }
+        }
+  var circle = new Circle(10);
+  document.write(circle.getArea()); //반지름 10 넓이는 314.1516 입니다.
+
+
+
+
+ </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

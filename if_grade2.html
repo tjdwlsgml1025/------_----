@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var kor, eng, math;
+        
+       function getAvg(kor,eng,math){
+        return (Number(kor) + Number(eng) + Number(math))/3.0;
+       }
+
+       function getGrade(avg){
+         var grade = '가';
+         
+         if(avg >= 90){
+            grade='수';
+         }
+         else if (avg >= 80){
+            grade='우';
+         }
+         else{
+            grade='가';
+         }
+         return grade;
+       }
+
+        kor = prompt("국어:");
+        eng = prompt("영어:");
+        math = prompt("수학:");
+
+        document.write("평균:" + getAvg(kor, eng, math) + "<br>");
+        document.write("학점:" + getGrade(getAvg(kor, eng, math)) + "<br>"); //학점구하는함수에 평균이들어감
+
+    </script>
+</body>
+</html>

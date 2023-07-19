@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서</title>
+</head>
+<body>
+    <script>
+
+var lotto = [];//new Array(6);
+
+         while(lotto.length < 6){ //로또배열의 길이가 6이 될때까지
+            var num = Math.floor(Math.random()* 45) + 1; //정수형으로 변환 
+            
+            if(lotto.indexOf(num) < 0){ //중복제거 (중복이 없을 경우 -1을 리턴하니까)
+               lotto.push(num);//랜덤숫자집어넣기
+            }
+         }
+
+         document.write("이번주 당첨 숫자는" + lotto.sort())
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> 
+    //window.open으로 띄운 창을 newWindow라는 이름의 객체로 생성
+     newWindow = window.open("http://www.google.com","openWindow","width =500, height = 300");
+
+     //위치 조정
+     newWindow.moveTo(50, 50); //첫번째 위치지정
+         for(var i=0; i<1000; i++) {
+            newWindow.moveBy(1, 1); //한픽셀씩 이동
+         }
+         
+    //사이즈 조정
+    newWindow.resizeTo(500, 600);
+         for(var i=0; i<200; i++) {
+            newWindow.resizeBy(-1, -1); //한픽셀씩 줄어듬
+         }
+
+    //window 객체 안에 있는함수
+
+    //onload 함수:전체를 한 후 제일 마지막에 실행 //안에는 콜백 함수가 들어감
+    window.onload = function(){
+        console.log("제일마지막!")
+
+    }
+   
+    //Screen함수-사이즈,픽셀깊이,해상도등의 옵션있음
+    function openWin(url, width, height) {
+         
+         console.log("screen.width : " + screen.width);
+         console.log("screen.height : " + screen.height);
+         
+         var left = screen.width/2 - width/2; //중앙에 나오도록 하는 공식
+         var top = screen.height/2 - height/2;
+         var opt = "width = " + width + ", height = " + height + ", left = " + left + ", top = " + top;
+         
+         open(url, "newWin", opt);
+      
+      }
+      
+      openWin("https://yahoo.com", 800, 500);
+
+      //Location객체=주소창을 컨트롤 :주소창에 이 링크를 넣어줌
+      window.onload = function(){
+       //location.href="http://www.naver.com";
+
+       location.assign("http://www.naver.com") 
+       location.replace("http://www.naver.com") //history를 안남김=뒤로가기안됨
+
+      }
+
+   </script>
+    
+    
+
+</head>
+<body>
+    
+
+</body>
+</html>

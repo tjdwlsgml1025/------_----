@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cEvent 
+        {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: #f00;
+           color: #fff;
+           font-weight: bolder;
+        }
+     </style>
+   
+
+    <script> 
+    window.onload = function(){
+        var ce = document.getElementById("cEvent");
+
+//(1)더블클릭=블루로
+     /*   ce.onclick = function(){  //onclick 객체 사용
+           // document.write('꽝');
+            ce.style.backgroundColor="blue";
+        }
+    */
+     //더 간결하게 함수를 통해서 이벤트 발생시키기 <addEventListener>
+     var changeBlue = function(){
+            ce.style.backgroundColor="blue" ;
+        }
+        ce.addEventListener("click",changeBlue ) ; //이 익명함수에 클릭이벤트넣는것
+
+//(2)더블클릭=레드로
+      /*   ce.ondblclick = function(){ 
+            ce.style.backgroundColor="red";
+        }
+        */
+        var changeRed = function(){
+            ce.style.backgroundColor="red" ;
+        }
+        ce.addEventListener("dblclick",changeRed) ;
+
+
+     }
+     
+    </script>    
+
+</head>
+<body> 
+    <div id="cEvent"> 이벤트 클릭 </div> 
+
+</body>
+</html>

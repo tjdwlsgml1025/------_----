@@ -28,9 +28,36 @@
          imgNode.setAttribute("height","67");
          imgNode.setAttribute("tempData","logoImg");
 
-         document.body.appendChild(imgNode); //노드연결
+         document.body.appendChild(imgNode); //노드연
+
+
+         //innerHTML 다이렉트로 바디에 글 넣기
+         var str = "";
+         for(var i=1; i<=5; i++){
+            str = str + "<p>안녕하세요</p>"; //이렇게 내용을 반복하기 위해서 많이 사용
+
+         }
+         document.body.innerHTML = "<p>안녕하세요</p>" //바디에 들어갈 것을 스트링으로 다이렉트로 넣기
 
       }
+
+      //id속성값을 이용해 객체 선택하기 
+
+      var str = "";
+            str += "<p id='jsTitle'> javascript & node.js </p>";
+            str += "<img id='logoImg', src='./img/logo.png',";
+            str += "width='170', height='67', tempData='logoImg'>";
+            
+            document.body.innerHTML = str;
+            
+            
+            var titleNode = document.getElementById("jsTitle"); //id태그생성
+            titleNode.innerHTML = "안냐세요";
+            
+            var logoNode = document.getElementById("logoImg");
+            logoNode.setAttribute("src", "./img/arm_mbed.png");
+            logoNode.setAttribute("width", 297);
+            logoNode.setAttribute("height", 124);
 
    </script>
     

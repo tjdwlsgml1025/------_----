@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cEvent 
+        {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: #f00;
+           color: #fff;
+           font-weight: bolder;
+        }
+
+        #divEvent 
+        {
+           width: 200px; height: 100px;
+           line-height: 100px;
+           text-align: center;
+           font-size: 1.2em;
+           background-color: green;
+           color: #fff;
+           font-weight: bolder;
+        }
+     </style>
+   
+
+    <script> 
+    window.onload = function(){
+        var ce = document.getElementById("cEvent");
+        var divCe = document.getElementById("divEvent"); //두개의 객체 생성
+
+        //콜백함수 두개 (색을 바꾸는)
+
+        //블루로 바꾸기
+     var changeBlue = function(event){ //파라미터에 event or e :  웹브라우저가 넘긴 이벤트객체
+            console.log(event); 
+            this.style.backgroundColor="blue" ;
+
+            for (var key in event) {
+               console.log(key + " : " + event[key]); //이벤트 종류들 확인가능
+            }
+        }
+        
+
+        //레드로 바구기
+    var changeRed = function(event){
+            console.log(event);
+            this.style.backgroundColor="red" ; //ce > this로 수정
+        }
+       
+
+        //같은 함수를 서로 다른 객체에 적용할 수 있게됨
+         ce.addEventListener("click",changeBlue ) ;//this는 호출하는 놈, 여기서는 ce 
+         ce.addEventListener("dblclick",changeRed) ;
+        
+         divCe.addEventListener("click",changeBlue ) ;//여기서 this는 divCe (얘가 changeBlue를 호출했으니까)
+         divCe.addEventListener("dblclick",changeRed) ;
+
+
+     }
+     
+    </script>    
+
+</head>
+<body> 
+    <div id="cEvent"> 이벤트 클릭 </div> 
+    <div id="divEvent"> div 클릭 </div> 
+
+</body>
+</html>

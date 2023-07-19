@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var tArea = document.getElementById("text_area");
+        tArea.addEventListener("keydown", areaHandler);
+
+        function areaHandler() {
+            var count = document.getElementById("text_area").value;
+            document.getElementById('result').innerHTML = count.length;
+        }
+
+    </script>
+</head>
+<body>
+    글자수 세기<br>
+    <textarea id="text_area" rows="10" cols="10"></textarea><br>
+    입력문자수: <span id="result"></span>
+</body>
+</html>

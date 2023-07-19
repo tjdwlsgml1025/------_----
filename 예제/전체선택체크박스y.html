@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function check(n) {
+        var lang = document.querySelectorAll(".lang");
+        for (var i = 0; i < lang.length; i++) {
+            lang[i].checked = n.checked;
+        }
+    }
+        function checkHandler() {
+            var lang = document.getElementsByClassName("lang");
+            var checkCount =0;
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+            document.getElementById('result').innerHTML = checkedCount;
+
+        }
+
+    </script>
+</head>
+<body>
+    전체선택
+    <input type="checkbox" name="all" onclick="check(this)"><br>
+    <input type="checkbox" name="java" class="lang">java<br>
+    <input type="checkbox" name="sql" class="lang">sql><br>
+    <input type="checkbox" name="angular" class="lang">angular<br>
+
+</body>
+</html>

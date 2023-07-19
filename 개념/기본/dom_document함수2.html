@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <script> 
+      //id속성값을 이용해 객체 선택하기 
+
+      var str = "";
+            str += "<p id='jsTitle'> javascript & node.js </p>";
+            str += "<img id='logoImg', src='logo.png',";
+            str += "width='170', height='67', tempData='logoImg'>";
+            
+            document.body.innerHTML = str; //body태그를 먼저실행해야 이 코드가 실행돼(그래서 온로드해야함)
+            
+            
+            var titleNode = document.getElementById("jsTitle"); //id선택 후 태그생성
+            titleNode.innerHTML = "안냐세요"; //태그내용변경
+            
+            var logoNode = document.getElementById("logoImg");
+            logoNode.setAttribute("src", "./img/arm_mbed.png");
+            logoNode.setAttribute("width", 297);
+            logoNode.setAttribute("height", 124);
+
+
+            //부모자식코드삭제
+            var titleNode =document.getElementById("jsTitle");
+            titleNode.parentNode.removeChild(titleNode);
+
+            var logoNode =  document.getElementById("logoImg");
+            logoNode.parentNode.removeChild(logoNode);
+   </script>
+    
+
+</body>
+</html>

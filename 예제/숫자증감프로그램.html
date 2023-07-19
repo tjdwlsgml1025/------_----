@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        var bUp = document.getElementById("up");
+        bUp.addEventListener("click", plusHandler);
+
+        var bDown = document.getElementById("down");
+        bDown.addEventListener("click", minusHandler);
+
+        function plusHandler() {
+            var count = document.getElementById("quantity").value; // value값 뽑아내는거
+            document.getElementById("quantity").value = Number(count) + 1; // 형변환해야함
+        }
+
+        function minusHandler() {
+            var count = document.getElementById("quantity").value; 
+            document.getElementById("quantity").value = parseInt(count) - 1; // int로 바꿈, 실수면 소수점 잘라
+        }
+     
+    </script>
+</head>
+<body>
+    증감<input type="text" id="quantity" value="1"> 
+    <button id="up" onclick="plusHandler()">+</button>
+    <button id="down" onclick="minusHandler()">-</button>
+</body>
+</html>

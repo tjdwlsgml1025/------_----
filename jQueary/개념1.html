@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+       <!-- jquery에서 이 한줄은 필수로 넣어야함 -->
+   <script>
+    $(document).ready(function(){ //선택자에 dom객체를 넣은 것, onload보다는 이 방법을 사용할것(온로드는 하나밖에 못씀,덮어쓰니까 얘는 중복가능)
+    
+    //첫번째방법
+    jQuery("p").css("color","red"); 
+    $("p").css("fontWeight","bolder"); 
+
+    //두번째방법
+    var myJQ = jQuery("p"); 
+    myJQ.css("textDecoration","underLine");
+
+    $("p").css("fontsize","2em").css("height","300px");
+
+
+    });
+
+/*
+    window.onload = function(){ //p태그가 먼저 메모리올라가야니까 onload해야함
+    jQuery("p").css("color","red"); //제이쿼리는 함수니까 괄호필수+선택자로 p태그,스타일객체통해서색변경
+    $("p").css("fontWeight","bolder"); //jquery를 줄인게 $이다
+
+    var myJQ = jQuery("p"); //제이쿼리로 만든 p태그를 객체로 생성
+    myJQ.css("textDecoration","underLine");
+
+    $("p").css("fontsize","2em").css("height","300px");
+
+
+}
+    </script>
+</head>
+<body>
+    <p> Hello jQuery! </p>
+    
+
+</body>
+</html>

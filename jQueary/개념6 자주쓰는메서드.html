@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script>
+      $(document).ready(function(){
+    //1. each() 배열
+        //복수로 넘어오는 경우, 배열로 만들어서 내부요소 하나씩 선택 가능
+        $("p").each(function (index,item) { //(콜백함수(index,item)) ,item명은 내가 설정가능
+           //  index[0]=item1(p1)넣고, index[1]=item2넣고,index[2]=item3으로 들어감,전체3번탐
+          console.log(index + $(item).text());     
+          console.log(index + $(this).text()); //this로 호출가능 (제이쿼리객체로만들었으니까)  
+          console.log(this);
+     
+        });
+//============================================================
+    //2. html() / text()함수 = 내용 읽고 쓰기
+        console.log($("#htmlMethod").html()) //선택한 부분이 출력됨(읽기)
+        $("#htmlMethod").html("<strong>new</strong>") //html태그가 새롭게들어감(초기화 쓰기)
+     
+        
+        console.log($("#htmlMethod").html()) //태그까지 출력함 <strong>까지 (새로초기화된 내용이 출력됨)
+        console.log($("#htmlMethod").text()) //태그없이 출력함 new만
+        
+        console.log($("#textMethod").text()); 
+        $("#textMethod").text("아아아아"); //텍스트에 파라미터로 아아아 집어 넣음 (초기화 쓰기)
+        console.log($("#textMethod").text()); //아아아가 출력됨
+      //둘다 집어 넣을 때는 차이가 없다. 출력시 태그까지 출력하냐마냐의 차이
+//===========================================================
+   //3.val()함수 : 값 반환
+      var num = $("#input").val();
+      console.log(num);
+
+      $("#input").val('hello world'); //값 집어넣기
+
+//===============================================================
+  //4.remove():문거객체제거 , empty():문서객체내부제거,태그는살아있음
+      //<div id ="removeMthod"> Remove Object! </div>
+     // <div id ="emptyMthod"> empty Object! </div> 
+      $("removeMthod").remove();
+      $("emptyeMthod").empty();
+
+//==========================================
+  //5. attr() 
+    //  <div id="attrMethod">
+   //  <img> <br>  <img> </div>
+      $("#attrMethod img").attr("src","logo.png"); //이미지넣기
+      console.log($("#attrMethod img").attr("src")) //=속성에 넣은 값 = logo.png이출력(뭐가들어있는지확인)
+      $("#attrMethod img").removeAttr("src"); //속성제거
+      
+
+
+
+
+
+      });
+    
+    </script>
+
+   
+</head>
+<body>
+  <input id="input" type="text" value="1"> 
+  <p> Hello javascript! </p> 
+  <p> Hello jQuery! </p>
+  <p> Hello node.js! </p>
+  
+  <div id="htmlMethod"> html() 메서드 </div>
+  <div id="textMethod"> text() 메서드 </div>
+  
+  <div id="addClass"> addClass() 메서드 </div>
+  <div id="removeClass" class="remCla"> removeClass() 메서드 </div>
+  
+  <div id="attrMethod">
+     <img>
+     <br>
+     <img>
+  </div>
+  
+  <div id="cssMethod"> CSS METHOD </div>
+  
+  <div id="removeMthod"> Remove Object! </div>
+  <div id="emptyMthod"> Empty Object! </div>
+  
+</div>
+</body>
+
+</html>

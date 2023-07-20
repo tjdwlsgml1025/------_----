@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script>
+        $(document).ready( function() {
+           
+            $("#add").click(function(){
+                var text = $("#words").val();      
+               
+                if(text =="")
+                    return; //텍스트값이 비어있는 경우 대비해서
+
+
+                var list = $("<li></li>"); //리스트 객체 생성
+                list.text(text); //객체에 사용자입력텍스트추가(목록에넣기)
+
+
+                $("#uList").append(list); //리스트에 추가된다
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="words">
+        <button type="button" id="add" >추가</button><br>
+        <ui id="uList"></ui>
+        <br>
+        <br>
+        <br>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script>
+      $(document).ready(function(){
+        
+         var wrapObj = $("#wrap");//바디에있는 wrpa을 넣은 객체생성
+         var divObj =  $("<div> 안녕하세요! </div>") //다이렉트로 값 넣어서 객체생성
+
+         //$(요소).appendTo(부모요소); ,append(자식)
+        divObj.appendTo(wrapObj); // appendTo=어디에 추가하겠다
+        wrapObj.append(divObj); //(선택자).append(추가할 콘텐츠)
+
+         //위치관련
+         divObj.prependTo(waraObj); //divObj를앞에 붙이다
+         waraObj.prepend(divObj);//wrap의 맨 앞에 div를 위치하겠다(위와같은결과)
+
+         divObj.insertAfter(wrapObj); //wrapObj하고 난 후 제일 마지막에 div가 들어감,뒤에추가
+         wrapObj.after(divObj); //위와 마찬가지 
+         divObj.insertBefore(wrapObj); //div가 젤 앞에 들어감
+
+         divObj.css("background","#ff0000");
+
+       
+         //<a>객체 생성 및 추가
+         var aObj =$("<a href='http://www.google.com' target='_blank'> google </a> <br>");
+         aObj.appendTo(wrapObj);
+
+         //이미지객체생성
+         var imgObj =$("<img src = 'logo.png'/><br>");
+            imgObj.appendTo(wrapObj);
+        
+      });
+  
+    </script>
+   
+</head>
+<body>
+    <div id = "wrap">
+      <div>contents</div>
+      <div>contents</div>
+      
+    </div>
+    
+
+</body>
+</html>

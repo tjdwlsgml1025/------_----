@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script> //두개값 입력하면 더해주는 창
+        $(document).ready(function(){
+            $("#quantity").change(function(){ //change이벤트:변할 때
+                var price = $("#price").val(); 
+                var quan = $("#quantity").val(); 
+                
+                var result = Number(price) * Number(quan); 
+                $("#total").text(result+"원"); //text로 출력해야함
+            });
+        }); 
+    </script>
+</head>
+<body>
+    <h1>2. 총합 구하기</h1>
+    가격<input type="text" id="price" value="2500">X
+    수량<select id="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    총합:<span id="total"></span>
+</body>
+</html>

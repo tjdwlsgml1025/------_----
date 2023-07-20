@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
+    <script> //두개값 입력하면 더해주는 창
+        $(document).ready(function(){
+            $("#btn").click(function(){ // 버튼 클릭시 이벤트 지정
+                var v1 = $("#input1").val(); // 첫번째 박스에 있는 값 호출
+                var v2 = $("#input2").val(); // 두번째 박스 값 호출
+                
+                var result = Number(v1) + Number(v2); // 결과값 만들기 (형변환 필수)
+                $("#result").val(result); // 선택한 요소에 결과값 넣어주기
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>1. +연산</h1>
+    <input id="input1" type="number" value="10"> + 
+    <input id="input2" type="number" value="20"> = 
+    <input id="result" type="text" value=""> 
+    <button id="btn">연산</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var bUp = document.getElementById("up");
+        bUp.addEventListener("click",plusHandler);
+
+        var bDown =document.getElementById("down");
+        bDown.addEventListener("click",minusHandler);
+
+        function plusHandler(){
+            var count = document.getElementById("quantity").value;
+            document.getElementById("quantity").value = Number(count) +1;
+        }
+
+        function minusHandler(){
+            var count = document.getElementById("quantity").value;
+            document.getElementById("quantity").value = Nmber(countu) -1;
+        }
+
+
+    </script>
+</head>
+<body>
+    증감<input type="text" id="quantity" value="1">
+    <button id="up" onclick="plusHandler()">+</button>
+    <button id="down" onclick="minusHandler()">-</button>
+</body>
+</html>

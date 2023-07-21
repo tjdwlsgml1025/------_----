@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10",
+                success: function(result){ //들어있는 요소 확인하기
+                    console.log(result);
+
+                    $("#list-table").append( //tr객체생성해서안에 td넣기
+                        $("<tr></tr>")
+                        .append($("<td></td>").text("번호"))
+                        .append($("<td></td>").text("이름"))
+                        .append($("<td></td>").text("전화번호"))
+                        .append($("<td></td>").text("주소"))
+                        .append($("<td></td>").text("사진"))
+                        .append($("<td></td>").text("삭제"))
+                    );
+
+                    $(result.contacts).each(function(index,item){ //contacts는 배열이니까 each로 싹 훑게 
+                        $("#list-table").append(
+                            $("<tr></tr>")
+                            .append($("<td></td>").text(this.no)) //this대신에 item로 써도 됨
+                            .append($("<td></td>").text(this.name))
+                            .append($("<td></td>").text(this.tel))
+                            .append($("<td></td>").text(this.address))
+                            .append($("<td></td>").append($("<img></img>").attr("src", this.photo))) //사진처리,attr=속성값변경
+                            .append($("<td></td>").append($("<input></input>")
+                                .attr("id", this.no).attr("type", "button").attr("class", "del-button").attr("value", "삭제"))) //버튼처리
+                    
+                        );
+                      
+                    });
+
+                },
+                error: function(e){
+                    console.log(e);
+                }
+            });
+        });
+
+        $(document).on("click", ".del-button", function(){
+            console.log(this);
+            $(this).parent().parent().remove();//삭제버튼의 부모(td),그 부모(tr)을 삭제한다
+        });
+    </script>
+</head>
+<body>
+    <table id="list-table" width="500" border="1"></table>
+</body>
+</html>

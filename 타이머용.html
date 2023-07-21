@@ -5,29 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+
     <script>
-        var bUp = document.getElementById("up");
-        bUp.addEventListener("click",plusHandler);
+        $(document).ready(function(){
+            $("#btnTotal").click(function(){
+                var total = 0;
+                $("input:checkbox:checked").each(function(index,item){
+                    total += Number($(item).val());
+                });
+                $("#totalPrice").text(total + "원");
 
-        var bDown =document.getElementById("down");
-        bDown.addEventListener("click",minusHandler);
+            });
 
-        function plusHandler(){
-            var count = document.getElementById("quantity").value;
-            document.getElementById("quantity").value = Number(count) +1;
-        }
-
-        function minusHandler(){
-            var count = document.getElementById("quantity").value;
-            document.getElementById("quantity").value = Nmber(countu) -1;
-        }
-
+        });
+   
 
     </script>
 </head>
-<body>
-    증감<input type="text" id="quantity" value="1">
-    <button id="up" onclick="plusHandler()">+</button>
-    <button id="down" onclick="minusHandler()">-</button>
+<body> 
+    <hr>
+    <h1>3. 총합 구하기2 (선택된 값만)</h1>
+  <div>
+      바나나(1000원)<input type="checkbox" name="fruit" class="fruit" value="1000"><br>     <!-- class는개발자가 코딩하기위해 묶은것 -->
+      사과(500원)   <input type="checkbox" name="fruit" class="fruit" value="500"><br>
+      배(1500원)    <input type="checkbox" name="fruit" class="fruit" value="1500"><br>
+      
+      <button id="btnTotal">총합구하기</button><br>
+      선택한 총가격:<span id="totalPrice"></span>
+  </div>
+  
 </body>
 </html>

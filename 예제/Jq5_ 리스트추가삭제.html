@@ -17,12 +17,19 @@
                     return; //텍스트값이 비어있는 경우 대비해서
 
 
-                var list = $("<li></li>"); //리스트 객체 생성
-                list.text(text); //객체에 사용자입력텍스트추가(목록에넣기)
+                var list = $("<li class='plant'></li>"); //리스트 객체 생성
+                list.text(text + "X"); //객체에 사용자입력텍스트추가(목록에넣기), li에 클래스 이름 넣기(삭제를 위해)
 
 
                 $("#uList").append(list); //리스트에 추가된다
             });
+
+            $(document).on('click', '.plant', function(){ //동적리스트의경우에는document on으로 해야 삭제됨(전체를 포괄하는 최고조상이니까)
+               $(this).remove();
+           
+            });
+
+
         });
 
 
@@ -31,7 +38,7 @@
 <body>
     <input type="text" id="words">
         <button type="button" id="add" >추가</button><br>
-        <ui id="uList"></ui>
+        <ul id="uList"></ul>
         <br>
         <br>
         <br>

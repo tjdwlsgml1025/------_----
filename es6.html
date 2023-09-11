@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<script>
+    //자바스크립트 = 인터프리터 언어 
+   
+
+// (1)상수선언  const
+    //privat final int a=1;
+    // const study = true
+    // study = false //상수니까 값바꾸면 에러가남
+
+    // console.log(study)
+    // document.write(study)
+
+    
+ // (2)let 
+    //1.호이스팅 =밑에있는놈을끌어올린다, 변수선언을 먼저 위에서부터 읽어서 메모리에 올림 그 후 문법 실행
+    //2.this =호출한놈
+    var study = "자바스트립트";
+
+if(study){
+	var study = "리액트"; //스터디가 하나 더 있으니까 덮어쓰기함
+	console.log('공부하자', study); // 공부하자 리액트
+}
+
+console.log('재밌다', study); // 재밌다 리액트
+
+ 
+// if문 안의 study값을 변경하면 if밖의 study도 변경됨.(호이스팅)
+// let을 사용하면 변수 영역을 코드 블록 안으로 한정시킬수 있다.
+
+var study = "자바스트립트";
+
+if(study){
+	let study = "리액트";
+	console.log('공부하자', study); // 공부하자 리액트
+}
+
+console.log('재밌다', study); // 재밌다 자바스크립트
+
+//(3)템플릿 문자열
+let lastname = '홍'
+let firstname = '길'
+let middlename = '동'
+
+//전통적인 문자열 연결은 더하기 기호(+)로 문자열과 변수를 서로 이어붙이는 방식
+console.log(lastname + ", " + firstname + " " + middlename);
+//템플릿에서는 ${ }를 사용해 문자열 안에 변수를 집어넣을 수 있기 때문에 문자열을 단 하나만 사용해도 된다.
+console.log(`${lastname}, ${firstname} ${middlename}`); // ''빽틱을 꼭 작성해야함
+
+//템플릿문자열예시 
+// console.log(`
+// ${firstname} 님께,
+
+// ${event} 티켓 ${qty}건을 구매해주셔서 감사합니다.
+
+// 주문 상세 정보 :
+// 	${lastname} ${firstname} ${middlename}
+//     ${qty} x $${price} = $${qty*price}	공연 : ${event}
+    
+// 공연 30분 전까지 배부처에서 티켓을 수령하시기 바랍니다.
+// 감사합니다 :)
+
+// ${ticketAgent} 드림
+// `)
+
+
+//(4)디폴트 파라미터
+function logActivity(name="EZ", activity="서핑"){
+	console.log(`${name}은(는) ${activity}을(를) 좋아합니다.`); //템플릿안에 아무것도 넣지 않으면 디폴트파라미터가 들어가짐 
+    //출력: EZ는 서핑을 좋아합니다. (디폴트파라미터)
+}
+
+logActivity()
+logActivity('홍길동','축구') //새로 설정해줫으니까 //홍길동은 축구를 좋아합니다
+logActivity('홍길동') //값 하나만 넣으면 다른거만 디폴트값나옴
+
+//(5) 화살표 함수
+//function 키워드 없이도 함수를 만들 수 있으며 return 사용X알아서 리턴값 반환
+
+//<기존방식>
+let lordify = function(name) {
+	return `열심히 공부하는 ${name}`;
+}
+//console.log(lodify("EZ")); // 열심히 공부하는 EZ
+
+//<화살표함수방식>
+let arrowFun = (name) => `열심히 공부하는 ${name}`; //함수와 리턴 생략
+
+arrowFun('홍길동')
+
+//====================NEW=========================================
+//ES6객체와 배열 
+var sandwich = {
+  bread : "플랫 화이트",
+  meat : "베이컨",
+  topping : ["치즈","상추","칠리소스"]
+}
+
+//1.객체의 구조분해를 사용한 대입 (내부에들을 따로 빼내서 걔네만 출력할거임)
+let{bread,meat} = sandwich
+console.log(bread + meat); // 플랫 화이트 베이컨
+
+//==========================================
+
+var study1 = person => { //study1은 person이라는 파라미터 하나를 받음 
+  console.log(`오늘도 공부하는 ${person.firstname}`);
+}
+
+var person = {
+  firstname : "zeze",
+  lastname : "E"
+}
+
+study1(person); // 오늘도 공부하는 zeze
+
+//==========================================
+//배열 뽑는 법
+var [firstResort] = ["용평","평창","강촌"]; //하나씩만 매핑되기 때문 
+
+console.log(firstResort); // 용평
+
+var [,,thirdResort] = ["용평","평창","강촌"]; //콤마단위로 
+
+console.log(thirdResort); // 강촌
+
+
+//2. 객체 리터럴 개선
+var name = "백두산";
+var elevation = 2744; // 높이(단위: 미터)
+
+var funHike = {name, elevation};
+
+console.log(funHike) // {name: "백두산", elavation: 2744}
+
+var print = function(){
+  console.log(`${this.name}의 높이는 ${this.elevation}m 입니다.`);
+}
+
+//3.스프레드연산자=원본훼손안시키기 위해 
+var food = ["닭갈비", "닭꼬치", "닭강정"]
+var drink = ["소주", "맥주"]
+var ezFavorite = [...food, ...drink] //... 점 세개 = 스프레드
+
+//console.log(ezFovorite.join(', ')); // 닭갈비, 닭꼬치, 닭강정, 소주, 맥주
+
+var food = ["닭갈비", "닭꼬치", "닭강정"]
+var [last] = food.reverse(); //원본을 뒤집어버려
+
+console.log(last);	// 닭강정
+console.log(food.join(', '));	// 닭강정, 닭꼬치, 닭갈비
+
+
+
+
+function directions(...args){
+  var [start, ...remaining] = args;
+  var [finish, ...stops] = remaining.reverse();
+  
+  console.log(`${args.length} 도시를 운행합니다.`);//6
+  console.log(`${start}에서 출발합니다.`);
+  console.log(`목적지는 ${finish}입니다.`);
+  console.log(`중간에 ${stops.length}군데 들립니다.`);
+}
+
+  directions("서울", "수원", "천안", "대전", "대구", "부산");
+
+
+
+  ///////////////////////////////
+  //클래스
+
+
+  class Vacation{
+  constructor(destination, length){
+    this.destination = destination;
+    this.length = length;
+  }
+  
+  print(){
+    console.log(`${this.destination}은(는) ${this.length}일 걸립니다.`);
+  }
+}
+
+const trip = new Vacation("칠레 산티아고", 7);
+
+console.log(trip.print()); // 칠레 산티아고은(는) 7일 걸립니다.
+
+</script>
+
+
+<body>
+    
+</body>
+</html>
